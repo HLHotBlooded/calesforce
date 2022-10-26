@@ -1,0 +1,147 @@
+---
+id: docs-and-snippets
+title: Docs & Snippets
+slug: /
+description: SSJS + JS + AMPScript + SQL + SFMC Config documentation and code snippets that I find useful for developing Salesforce Marketing Cloud.
+image: img/og/og-image-docs-and-snippets.png
+---
+
+import { LeadText } from '../src/components/LeadText.js';
+import { Button } from '../src/components/Buttons.js';
+
+<LeadText content="SSJS + JS + AMPScript + SQL + SFMC Config documentation and code snippets that I find useful for developing Salesforce Marketing Cloud." />
+
+## Zen of SFMC
+
+Salesforce Marketing Cloud is a complex and flexible tool. This combination is a dream-come-true set for enterprise Marketing Automation tools, but on the other hand, it enables mistakes and messy solutions. Find the right path to success through a best-practice fuelled checklist full of tool-based explanations and examples.
+
+<Button
+    link='./zen-of-sfmc/'
+    text='Read about Zen of SFMC'
+/>
+
+## Server-Side JavaScript
+
+SSJS is an XX-century version of JavaScript paired with proprietary libraries created by Salesforce. It is one of the programmatic tools useful to leverage Marketing Cloud to its fullest potential. I am creating this documentation to make my (and hopefully also yours) work easier.
+
+### SSJS Documentation
+
+- [If & Switch](./ssjs/ssjs-if-and-switch.mdx)
+- [Loops](./ssjs/ssjs-loops.mdx)
+- [Debugging](./ssjs/debugging-ssjs.mdx)
+- [Style Guide](./ssjs/ssjs-style-guide.mdx)
+- [Performance](./ssjs/ssjs-vs-ampscript-performance.mdx)
+
+### SSJS Snippets
+
+- [AMPScript in SSJS](./ssjs/ssjs-snippet-ampscript-in-ssjs.mdx)
+- [MobileConnect Phone Change](./ssjs/ssjs-snippet-mobileconnect-phone-change.mdx)
+- [SSJS Script Template](./ssjs/ssjs-snippet-ssjs-script-template.mdx)
+
+<Button
+    link='./category/ssjs/'
+    text='Read about SSJS'
+/>
+
+## JavaScript
+
+In this part, I am gathering selected elements of modern vanilla JavaScript that I find helpful for marketing technologists. Expect guides on asynchronous calls to API and backend resources, form-focused DOM manipulation and playing with data objects.
+
+### JS Documentation
+
+- [If & Switch](./js/js-if-and-switch.mdx)
+- [Loops](./js/js-loops.mdx)
+- [Document Object Model (DOM)](./js/js-dom.mdx)
+
+### JS Snippets
+
+- [Export, Import & Document Roles in Salesforce Marketing Cloud](./js/js-snippet-export-import-document-sfmc-roles.mdx)
+
+<Button
+    link='./category/javascript/'
+    text='Read about JavaScript'
+/>
+
+## AMPScript
+
+AMPScript is a proprietary scripting language in Salesforce Marketing Cloud along with [SSJS](#Server-Side-JavaScript). Out of the two, it is simpler and more performant, but too limited for complex solutions. Good starting point for marketers without development experience. Best option for scripting in messaging.
+
+### AMPScript Documentation
+
+- [Style Guide](./ampscript/ampscript-style-guide.mdx)
+- [Performance](./ssjs/ssjs-vs-ampscript-performance.mdx)
+
+### AMPScript Snippets
+
+- [AMPScript in SSJS](./ssjs/ssjs-snippet-ampscript-in-ssjs.mdx)
+
+<Button
+    link='./category/ampscript/'
+    text='Read about AMPScript'
+/>
+
+## SFMC SQL
+
+To fully leverage the Salesforce Marketing Cloud Data Extensions and Automation Studio, SQL is a must-have. Here I gathered both the language basics and some of the most valuable snippets to copy and paste shamelessly.
+
+### SQL Documentation
+
+- [SQL Basics](./sql/sfmc-sql-basics.mdx)
+- [Select](./sql/sfmc-sql-select.mdx)
+- [From](./sql/sfmc-sql-from.mdx)
+- [Join](./sql/sfmc-sql-join.mdx)
+- [Where](./sql/sfmc-sql-where.mdx)
+- [Case](./sql/sfmc-sql-case.mdx)
+- [Like](./sql/sfmc-sql-like.mdx)
+- [String Functions](./sql/sfmc-sql-string-functions.mdx)
+- [Date Functions](./sql/sfmc-sql-date-functions.mdx)
+- [Numeric Functions](./sql/sfmc-sql-numeric-functions.mdx)
+- [Conversion Functions](./sql/sfmc-sql-conversion-functions.mdx)
+- [Aggregate Functions](./sql/sfmc-sql-aggregate-functions.mdx)
+- [NULL Functions](./sql/sfmc-sql-null-functions.mdx)
+- [Style Guide](./sql/sfmc-sql-style-guide.mdx)
+
+### SQL Snippets
+
+- [Debugging Email Sends](./sql/sfmc-sql-snippet-debugging-email-sends.mdx)
+- [Debugging Value Length](./sql/sfmc-sql-snippet-debugging-value-length.mdx)
+
+<Button
+    link='./category/sfmc-sql/'
+    text='Read about SFMC SQL'
+/>
+
+## SFMC Config
+
+Many things in Salesforce Marketing Cloud aren't coding but have a massive impact on the code. Permissions. System Data Views. Configuration options. Here I focus on the most important ones that are crucial for Marketing Cloud developers.
+
+- [Permissions](./config/sfmc-config-permissions.mdx)
+- [System Data Views](./config/sfmc-config-system-data-views.mdx)
+- [Features On Demand](./config/sfmc-config-features-on-demand.mdx)
+- [Behavioral Triggers](./config/sfmc-config-behavioral-triggers.mdx)
+- [AppExchange Solutions](./config/sfmc-config-appexchange-solutions.mdx)
+
+<Button
+    link='./category/sfmc-config/'
+    text='Read about SFMC Config'
+/>
+
+## SFMC Use Cases
+
+Knowing how to code is one thing. Knowing what to code is another. In Use Cases, I focus not on specific features of the Marketing Cloud configuration or its programming languages but rather on using them to drive business value. Take a look and pick what you need.
+
+- [Tailor with Data](./usecase/tailor-with-data.mdx)
+- [Engage with Countdown](./usecase/engage-with-countdown.mdx)
+- [Power of Code Resources](./usecase/sfmc-code-resource.mdx)
+- [Solve with Cloud Page Apps](./usecase/sfmc-cloud-page-apps.mdx)
+- [Enhanced Send Log](./usecase/sfmc-enhanced-send-log.mdx)
+- [Contact Deletion Process](./usecase/sfmc-contact-deletion.mdx)
+
+<Button
+    link='./category/sfmc-use-cases/'
+    text='Read about SFMC Use Cases'
+/>
+
+## Changes
+
+I'm updating the docs ongoingly, so expect changes. You can track those by watching and starring the website's [Github Repository](https://github.com/MateuszDabrowski/mateuszdabrowski.pl).

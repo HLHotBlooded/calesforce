@@ -1,0 +1,58 @@
+---
+id: sfmc-sql-basics
+title: SFMC SQL Basics
+sidebar_label: SQL Basics
+description: SELECT your best contacts FROM Salesforce Marketing Cloud WHERE Data Filter is not enough.
+image: img/og/og-image-sql-basics.png
+tags: [Marketing Cloud, SQL]
+---
+
+import { LeadText } from '../../src/components/LeadText.js';
+import DocCardList from '@theme/DocCardList';
+
+<LeadText content='SELECT your best contacts FROM Salesforce Marketing Cloud WHERE Data Filter is not enough.' />
+
+## SQL in Salesforce Marketing Cloud
+
+SQL (Structured Query Language) is one of the best ways to work with relational databases. And Marketing Cloud's Data Extensions, with the help of Data Designer, offers precisely that. A relational database. Same for system Data Views containing tracking data. Because of this, SQL is used in SFMC whenever powerful segmentation is needed (mostly using Automation Studio).
+
+The main difference from standard SQL (SFMC uses more or less SQL Server 2016) is that SFMC supports only `SELECT` statement. Neither `INSERT`, `UPDATE` or `DELETE` are officially supported. It is because the queries are executed as a part of the backend query and are limited to provide non-breakable functionality.
+
+Another limiting characteristic of SFMC SQL is visible in the data accessible by queries. Only data stored in data extensions or system data views is available. Moreover, you can save the results only to the data extensions. The reason is other data structures of SFMC are not relational databases.
+
+Finally, the significant limitation that you might hit as your Marketing Cloud grows is the AutoKill. It will automatically stop your query if execution time exceeds the 30 minutes limit. Think about the query with the future in mind. It is especially important for queries that are supposed to be backbones of your data management flow in Marketing Cloud. Even if it works great now, consider how it will behave once you have more data in the system. One of the great ways to not trigger AutoKill is to implement retention periods for the Data Extensions used in the query to limit input data.
+
+## Fundamentals of SQL queries
+
+SQL is straightforward to read but requires a bit of understanding to write. However, with only the [`SELECT`](./sfmc-sql-select.mdx) being available in Marketing Cloud, it is effortless to grasp.
+
+There are four most important elements that you will be using in nearly every query in SFMC:
+
+* [`SELECT`](./sfmc-sql-select.mdx): tell the query what data you want to leverage
+* [`FROM`](./sfmc-sql-from.mdx): tell the query where the data is in Marketing Cloud (name of Data Extension or System Data View)
+* [`JOIN`](./sfmc-sql-join.mdx): tell the query how you want to merge data from multiple sources
+* [`WHERE`](./sfmc-sql-where.mdx): tell the query which part of the above data is interesting to you
+
+However, there is much to learn to unlock the full power of SQL in SFMC. Check out deep-dive docs on SQL operators ([`LIKE`](./sfmc-sql-like.mdx), [`CASE`](./sfmc-sql-case.mdx)), functions ([String](./sfmc-sql-string-functions.mdx), [Date](./sfmc-sql-date-functions.mdx), [Numeric](./sfmc-sql-numeric-functions.mdx), [Conversion](./sfmc-sql-conversion-functions.mdx), [Aggregate](./sfmc-sql-aggregate-functions.mdx)) and [SFMC System Data Views](../config/sfmc-config-system-data-views.mdx).
+
+Knowing the available functions is one thing. Writing good and readable queries - another. Salesforce Marketing Cloud is always a team sport, so be sure to leverage the power of a [Style Guide](./sfmc-sql-style-guide.mdx) to improve the quality of your SQL.
+
+### Order of operations
+
+One of the key things to remember when building more complex queries is the order of operations, as it will decide what is in the output:
+
+[`FROM`](./sfmc-sql-from.mdx) > [`WHERE`](./sfmc-sql-where.mdx) > [`GROUP BY`](#group-by) > [`HAVING`](#having) > [`DISTINCT`](./sfmc-sql-select.mdx#distinct) > [`ORDER BY`](./sfmc-sql-select.mdx#top-with-order-by)
+
+It means that rows filtered with `WHERE` will not be taken into consideration for `GROUP BY` and that `DISTINCT` deduplication will be applied to results grouped and filtered by `HAVING` - not the source data.
+
+## Query Studio
+
+Working with queries in the out-of-the-box version of Salesforce Marketing Cloud is quite hard. Whenever you want to check the output of your query, you must run the SQL Query in Automation Studio and check the output Data Extension. There is, however, a better way.
+
+A [Query Studio](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FP3yFUAT) by Salesforce. It is a Marketing Cloud App available in [AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FP3yFUAT) that is must-have for anyone interested in working with SQL in SFMC. Think about SQL Server Studio or, if this is not telling you much, a one-stop-shop for writing, validating, checking and saving your queries. Check it. You will never look back.
+
+Learn more on [sfmarketing.cloud](https://sfmarketing.cloud/2019/08/05/query-studio-for-marketing-cloud/).
+
+## All SQL Guides
+
+<DocCardList />
