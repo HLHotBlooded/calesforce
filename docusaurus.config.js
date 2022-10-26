@@ -2,7 +2,7 @@
 module.exports = {
     title: 'Mateusz Dąbrowski',
     tagline: 'Automate Marketing Automation',
-    url: 'https://mateuszdabrowski.pl',
+    url: 'https://marketingcloudview.herokuapp.com/',
     baseUrl: '/',
     trailingSlash: true,
     favicon: 'img/favicon.ico',
